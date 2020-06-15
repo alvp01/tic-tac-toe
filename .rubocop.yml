@@ -48,3 +48,6 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+Link/ScriptPermission:
+  Enabled: false
+

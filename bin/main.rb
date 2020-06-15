@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
-
+#rubocop:disable all
 puts 'Hello world!'
+#rubocop:enable all

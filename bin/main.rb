@@ -50,14 +50,22 @@ moves_counter = 0
 while moves_counter < 9
   if moves_counter.even?
     play_game(game_board,player_1)
+    if game_board.win_cond?
+        puts 'Player 1 won!'
+        break
+    end
   else
     play_game(game_board,player_2)
+    if game_board.win_cond?
+        puts 'Player 1 won!'
+        break
+    end 
   end
   p
   game_board.display_board
   moves_counter += 1
 end
-puts 'Well its a DRAW!'.red
+puts 'Well its a DRAW!'.red unless game_board.win_cond?
 # puts 'Player 1, please select a cell. Between 1 and 9.'
 # game_board.display_board
 # game_board.update_board(3,'O')

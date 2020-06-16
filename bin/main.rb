@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-#rubocop:disable all
-#rubocop:enable all
 require_relative '../lib/string.rb'
 require_relative '../lib/helpers.rb'
 

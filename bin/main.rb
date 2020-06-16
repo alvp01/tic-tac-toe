@@ -5,13 +5,13 @@ require_relative '../lib/board.rb'
 require_relative '../lib/player.rb'
 
 def display_board(board)
-    puts
-    puts "#{board[0]} | #{board[1]} | #{board[2]}"
-    puts '----------'
-    puts "#{board[3]} | #{board[4]} | #{board[5]}"
-    puts '----------'
-    puts "#{board[6]} | #{board[7]} | #{board[8]}"
-    puts
+  puts
+  puts "#{board[0]} | #{board[1]} | #{board[2]}"
+  puts '----------'
+  puts "#{board[3]} | #{board[4]} | #{board[5]}"
+  puts '----------'
+  puts "#{board[6]} | #{board[7]} | #{board[8]}"
+  puts
 end
 
 helpers = Helpers.new
@@ -21,16 +21,16 @@ puts 'Player 1, what do you want to use X or O?'
 player_1_sym = gets.strip.upcase
 player_2_sym = ''
 game_board = Board.new
-player_1 = nil
-player_2 = nil
+player1 = nil
+player2 = nil
 
 loop do
   if helpers.valid_symbol?(player_1_sym)
     puts 'Ready Player 1 !'
     player_2_sym = player_1_sym == 'X' ? 'O' : 'X'
     p "Player 2 is now #{player_2_sym}"
-    player_1 = Player.new("Player 1", player_1_sym)
-    player_2 = Player.new("Player 2", player_2_sym)
+    player1 = Player.new('Player 1', player_1_sym)
+    player2 = Player.new('Player 2', player_2_sym)
     break
   else
     puts "Enter either an X or an O. Not #{player_1_sym}".red
@@ -54,22 +54,21 @@ def play_game(game_board, player)
   display_board(game_board.board)
 end
 
-
 moves_counter = 0
 while moves_counter < 9
   if moves_counter.even?
-    play_game(game_board,player_1)
-    if game_board.win_cond?
-        puts 'Player 1 won!'
-        break
+    play_game(game_board, player1)
+    if game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
+      puts 'Player 1 won!'
+      break
     end
   else
-    play_game(game_board,player_2)
-    if game_board.win_cond?
-        puts 'Player 2 won!'
-        break
-    end 
+    play_game(game_board, player2)
+    if game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
+      puts 'Player 2 won!'
+      break
+    end
   end
   moves_counter += 1
 end
-puts 'Well its a DRAW!'.red unless game_board.win_cond?
+puts 'Well its a DRAW!'.red unless game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?

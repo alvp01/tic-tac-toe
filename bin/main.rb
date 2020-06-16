@@ -9,6 +9,7 @@ helpers = Helpers.new
 puts 'Welcome to Tic Tac Toe !'
 puts 'Player 1, what do you want to use X or O?'
 player_1_sym = gets.strip.upcase
+player_2_sym = ''
 game_board = Board.new
 loop do
   if helpers.valid_symbol?(player_1_sym)
@@ -27,7 +28,7 @@ end
 game_board.display_board
 ## Player selects a cell depending on who the player is, and redraw the board
 moves_counter = 0
-while moves_counter <= 9
+while moves_counter < 9
   if moves_counter.even?
     # #Player 1's Turn
     ## Get input
@@ -41,8 +42,8 @@ while moves_counter <= 9
       player_1_move = gets.strip
       p "#{player_1_move} move in the loop"
     end
-
-  ## Update Board
+    ## Update Board
+    game_board.update_board(player_1_move.to_i - 1, player_1_sym)
   ## Redraw
   else
     # #Player 2's Turn
@@ -58,7 +59,7 @@ while moves_counter <= 9
       p "#{player_2_move} move in the loop"
     end
     ## Update Board
-
+    game_board.update_board(player_2_move.to_i - 1, player_2_sym)
   end
   p
   game_board.display_board

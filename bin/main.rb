@@ -44,12 +44,17 @@ def play_game(game_board, player)
   puts "#{player.player_name}. Whats your move?".red
   p 'Enter a number between 1 and 9.'
   player_move = gets.strip
+
   until game_board.input_valid?(player_move.to_i)
+    if game_board.move_made?(player_move.to_i - 1)
+      puts 'Move already made !'.red
+    else
+      puts 'Remember to enter a number between 1 and 9.'.red
+    end
     puts "#{player.player_name}. Whats your move?".green
-    puts 'Remember to enter a number between 1 and 9.'.red
     player_move = gets.strip
-    p "#{player_move} move in the loop"
   end
+  p "#{player_move} move in the loop"
   game_board.update_board(player_move.to_i - 1, player.player_symbol)
   display_board(game_board.board)
 end

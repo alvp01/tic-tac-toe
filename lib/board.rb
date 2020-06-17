@@ -9,6 +9,12 @@ class Board
     @board[ind] = symb
   end
 
+  def move_made?(user_input)
+    return true if board[user_input] == 'X' || board[user_input] == 'O'
+
+    false
+  end
+
   def input_valid?(user_input)
     return true if @board.include?(user_input)
 

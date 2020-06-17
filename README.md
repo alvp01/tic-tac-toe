@@ -12,7 +12,7 @@ If no player gets three tokens in line and the board is full it is a tie.<br>
 
 ## Live Demo
 
-[![Run on Repl.it](https://repl.it/@alvp01/tic-tac-toe#.replit)](https://repl.it/@alvp01/tic-tac-toe#.replit)
+[![Try on repl.it](https://repl-badge.jajoosam.repl.co/try.png)](https://repl.it/@alvp01/tic-tac-toe?ref=button)
 
 ## Installation
 

@@ -6,10 +6,6 @@
 - RUBY
 - VSCode
   
-## Live Demo
-
-[Live Demo Link](#)
-
 ## Authors
 
 👤 **Abel Lavieri**

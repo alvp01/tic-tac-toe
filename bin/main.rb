@@ -16,8 +16,8 @@ end
 
 helpers = Helpers.new
 
-puts 'Welcome to Tic Tac Toe !'
-puts 'Player 1, what do you want to use X or O?'
+puts 'Welcome to Tic Tac Toe !'.blue
+puts 'Player 1, what do you want to use X or O?'.green
 player_1_sym = gets.strip.upcase
 player_2_sym = ''
 game_board = Board.new
@@ -26,9 +26,9 @@ player2 = nil
 
 loop do
   if helpers.valid_symbol?(player_1_sym)
-    puts 'Ready Player 1 !'
+    puts 'Ready Player 1 !'.green
     player_2_sym = player_1_sym == 'X' ? 'O' : 'X'
-    p "Player 2 is now #{player_2_sym}"
+    puts "Player 2 is now #{player_2_sym}".blue
     player1 = Player.new('Player 1', player_1_sym)
     player2 = Player.new('Player 2', player_2_sym)
     break
@@ -42,7 +42,7 @@ display_board(game_board.board)
 
 def play_game(game_board, player)
   puts "#{player.player_name}. Whats your move?".red
-  p 'Enter a number between 1 and 9.'
+  puts 'Enter a number between 1 and 9.'.brown
   player_move = gets.strip
 
   until game_board.input_valid?(player_move.to_i)
@@ -54,7 +54,6 @@ def play_game(game_board, player)
     puts "#{player.player_name}. Whats your move?".green
     player_move = gets.strip
   end
-  p "#{player_move} move in the loop"
   game_board.update_board(player_move.to_i - 1, player.player_symbol)
   display_board(game_board.board)
 end
@@ -64,16 +63,16 @@ while moves_counter < 9
   if moves_counter.even?
     play_game(game_board, player1)
     if game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
-      puts 'Player 1 won!'
+      puts 'Player 1 won!'.blue
       break
     end
   else
     play_game(game_board, player2)
     if game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
-      puts 'Player 2 won!'
+      puts 'Player 2 won!'.magenta
       break
     end
   end
   moves_counter += 1
 end
-puts 'Well its a DRAW!'.red unless game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
+puts 'Well its a DRAW!'.cyan unless game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?

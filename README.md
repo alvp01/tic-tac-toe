@@ -8,6 +8,17 @@ Players take turns to play their token in a unoccupied cell.<br>
 The first player who gets three of their tokens in line wins the game.<br>
 If no player gets three tokens in line and the board is full it is a tie.<br>
 
+## Live Demo
+
+[![Run on Repl.it](https://repl.it/badge/github/simandebvu/ruby-data-structures-algorithms)](https://repl.it/github/simandebvu/ruby-data-structures-algorithms)
+
+## Installation
+
+ Open a bash console and type: 
+ - [ ] git clone https://github.com/alvp01/tic-tac-toe.git
+ - [ ] cd tic-tac-toe 
+ - [ ] bin/main.rb 
+
 ## Built With
 
 - RUBY

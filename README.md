@@ -1,6 +1,8 @@
 # TIC TAC TOE GAME
 > Ruby code for tic-tac-toe Game.
 
+![screenshot](./tic-tac-toe.gif)
+
 ### Game rules
 Tic tac toe game consists in a 3 by 3 board and two players.<br>
 Players choose between X and O as their tokens to play.<br>
@@ -10,7 +12,7 @@ If no player gets three tokens in line and the board is full it is a tie.<br>
 
 ## Live Demo
 
-[![Run on Repl.it](https://repl.it/badge/github/simandebvu/ruby-data-structures-algorithms)](https://repl.it/github/simandebvu/ruby-data-structures-algorithms)
+[![Run on Repl.it](https://repl.it/@alvp01/tic-tac-toe#.replit)](https://repl.it/@alvp01/tic-tac-toe#.replit)
 
 ## Installation
 

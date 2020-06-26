@@ -75,4 +75,4 @@ while moves_counter < 9
   end
   moves_counter += 1
 end
-puts 'Well its a DRAW!'.cyan unless game_board.win_cond_row? or game_board.win_cond_col? or game_board.win_cond_diag?
+puts 'Well its a DRAW!'.cyan if game_board.its_draw?

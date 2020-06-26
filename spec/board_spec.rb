@@ -65,4 +65,17 @@ describe Board do
       expect(game_board.win_cond_diag?).to eql(true)
     end
   end
+
+  describe '#its_draw?' do
+    it 'return true if no player wins' do
+      expect(game_board.its_draw?).to eql(true)
+    end
+
+    it 'returns false if a player wins' do
+      game_board.board[0] = 'X'
+      game_board.board[4] = 'X'
+      game_board.board[8] = 'X'
+      expect(game_board.its_draw?).to eql(false)
+    end
+  end
 end

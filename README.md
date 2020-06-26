@@ -26,6 +26,25 @@ If no player gets three tokens in line and the board is full it is a tie.<br>
 - RUBY
 - VSCode
   
+## Testing
+We are using RSpec testing tool to test all enumerable methods. Also some detailed documentation about this tool
+
+## Install
+- In a terminal window type gem install rspec
+- Once rspec install has finished, type rspec --init
+- You will see a folder spec and a file .rspec
+- Inside spec folder you'll see a spec_helper.rb file.
+
+## Run
+We have already created rspec-testing files called board_spec.rb, helper_spec.rb, player_spec.rb and spec_helper.rb if you want to create another one with the end [your file name]_spec.rb
+
+- go to the folder inside your terminal type rspec
+- If all test were passed you will see:
+ 
+ `15 examples, 0 failures`
+
+Else you'll see a red message, then check errors and fix them
+
 ## Authors
 
 👤 **Abel Lavieri**

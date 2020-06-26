@@ -41,15 +41,28 @@ describe Board do
   end
 
   describe '#win_cond_col?' do
-    it 'returns false when there is no winning row' do
+    it 'returns false when there is no winning column' do
       expect(game_board.win_cond_col?).to eql(false)
     end
 
-    it 'returns true if there is a winning row' do
+    it 'returns true if there is a winning column' do
       game_board.board[0] = 'X'
       game_board.board[3] = 'X'
       game_board.board[6] = 'X'
       expect(game_board.win_cond_col?).to eql(true)
+    end
+  end
+
+  describe '#win_cond_diag?' do
+    it 'returns false when there is no winning diagonal' do
+      expect(game_board.win_cond_diag?).to eql(false)
+    end
+
+    it 'returns true if there is a winning diagonal' do
+      game_board.board[0] = 'X'
+      game_board.board[4] = 'X'
+      game_board.board[8] = 'X'
+      expect(game_board.win_cond_diag?).to eql(true)
     end
   end
 end

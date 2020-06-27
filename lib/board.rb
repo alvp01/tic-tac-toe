@@ -43,4 +43,10 @@ class Board
 
     false
   end
+
+  def its_draw?
+    return true unless win_cond_diag? or win_cond_col? or win_cond_row?
+
+    false
+  end
 end
